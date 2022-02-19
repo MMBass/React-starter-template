@@ -1,14 +1,9 @@
-import styled from '@emotion/styled';
 
-const StyledLayout = styled.div`
-  backgroundColor: lightgray;
-`
-
-function Layout() {
+function Layout(props) {
   return (
-      <StyledLayout id="">
-      
-      </StyledLayout>
+    <div className="pageLayout">
+      {props.children}
+    </div>
   );
 }
 

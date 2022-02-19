@@ -16,10 +16,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "src",
+    "baseUrl": "./",
     "paths": {
-      "@componanets/*":["./components/*"],
-      "@pages/*":["./pages/*"],
+      "@pages/*":["./src/pages/*"],
+      "@components/*":["./src/components/*"],
+      "@/*":["./src/*"],
     }
   },
   "include": ["src"]

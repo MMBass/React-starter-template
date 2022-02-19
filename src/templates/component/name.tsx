@@ -1,5 +1,5 @@
 
-function name() {
+function Name() {
   return (
     <div id="">
       
@@ -7,4 +7,4 @@ function name() {
   );
 }
 
-export default name;
+export default Name;

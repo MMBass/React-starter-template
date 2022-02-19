@@ -9,9 +9,9 @@ generateTemplateFiles([
     entry: {
       folderPath: './src/templates/component' ,
     },
-    stringReplacers: ['name'],
+    stringReplacers: ['Name'],
     output: {
-      path: './src/components/name',
+      path: './src/components/Name',
       pathAndFileNameDefaultCase: '(pascalCase)',
     },
   },
@@ -21,9 +21,9 @@ generateTemplateFiles([
     entry: {
       folderPath: './src/templates/component' ,
     },
-    stringReplacers: ['name'],
+    stringReplacers: ['Name'],
     output: {
-      path: './src/pages/name',
+      path: './src/pages/Name',
       pathAndFileNameDefaultCase: '(pascalCase)',
     },
   }

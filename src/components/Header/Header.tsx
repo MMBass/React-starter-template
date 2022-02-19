@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import { NavLink } from "react-router-dom";
 
 import AppBar from '@mui/material/AppBar';
@@ -6,48 +5,44 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 
-import { styled } from '@mui/material/styles';
+import {default as SidePagesList} from '../SidePagesList/StyledSidePagesList';
+import { StyledComponent } from '@emotion/styled';
 
-// note - this way working fine:
-// const CustomizedAppBar = styled(AppBar)`
-//   color: #20b2aa;
-
-//    a {
-//     text-decoration: none;
-//   }
-// `;
-
-interface pageItem{
-  name:string,
-  url:string
+interface pageItem {
+  name: string,
+  url: string,
 }
 
-const pages:pageItem[] = [{name:'Home', url: '/'},{name:'About', url: '/about'}];
+type AnchorType = 'top' | 'left' | 'bottom' | 'right';
+type ChildType = JSX.Element | StyledComponent<any>;
 
-const Header = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+interface HeaderProps {
+  className: string,
+  toggleDrawer: (anchor: AnchorType, open: boolean, child?: ChildType) => void,
+}
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
+const pages: pageItem[] = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }];
+
+const Header = ({ className, ...props }: HeaderProps) => {
+
+  const handleOpenNavMenu = ():void => {
+    props.toggleDrawer('left',true, SidePagesList);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseNavMenu = ():void => {
+    props.toggleDrawer('left',false);
   };
 
   return (
-    // <CustomizedAppBar position="static">
-    <AppBar position="static">
+    <AppBar position="static" className={className}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
@@ -66,32 +61,6 @@ const Header = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <NavLink to={page.url} key={page.name}>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </MenuItem>
-                </NavLink>
-              ))}
-            </Menu>
           </Box>
           <Typography
             variant="h6"
@@ -108,7 +77,7 @@ const Header = () => {
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'black', display: 'block' }}
                 >
-                   {page.name}
+                  {page.name}
                 </Button>
               </NavLink>
             ))}
@@ -116,7 +85,6 @@ const Header = () => {
         </Toolbar>
       </Container>
     </AppBar>
-    // </CustomizedAppBar>
   );
 };
 

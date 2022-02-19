@@ -1,17 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from '@mui/material/styles';
 
 import { theme } from '../theme';
 
+import HeadTags from '@components/HeadTags/HeadTags';
+import { default as Header } from '@components/Header/StyledHeader';
+import { default as Layout } from '@components/Layout/StyledLayout';
+import { default as Drawer } from '@components/Drawer/StyledDrawer';
+
 import HomePage from '@pages/HomePage/HomePage';
-import AboutPage  from '@pages/AboutPage/AboutPage';
+import AboutPage from '@pages/AboutPage/AboutPage';
+import { StyledComponent } from '@emotion/styled';
 
-import  StyledHeader  from '@components/Header/StyledHeader';
-import  HeadTags  from '@components/HeadTags/HeadTags';
-import  Layout  from '@components/Layout/Layout';
+type AnchorType = 'top' | 'left' | 'bottom' | 'right';
+type ChildType = JSX.Element | StyledComponent<any>;
 
-function App() {
+function App({ className }) {
+
+  // TODO move to sideBar/drawer context:
+  const [sideBar, setSideBar] = useState<boolean>(false);
+  const [sideBarAnchor, setSideBarAnchor] = useState<AnchorType>('left');
+  const [SideBarChild, setSideBarChild] = useState<any>(null);
 
   function init() {
 
@@ -21,20 +31,33 @@ function App() {
     init();
   }, []);
 
+
+  const toggleDrawer = (anchor: AnchorType, open: boolean, child?: ChildType) => {
+    setSideBar(open);
+    setSideBarAnchor(anchor);
+    setSideBarChild(child || null);
+  }
+
   return (
-    <Router>
-      <HeadTags></HeadTags>
-      <ThemeProvider theme={theme}>
-        <StyledHeader></StyledHeader>
+    <div className={className}>
+      <Router>
+        <HeadTags></HeadTags>
+        <ThemeProvider theme={theme}>
+          <Header className="header" toggleDrawer={toggleDrawer}></Header>
+          {(sideBar && SideBarChild) && <Drawer className="side-bar" toggleDrawer={toggleDrawer} anchor={sideBarAnchor}>
+            <SideBarChild></SideBarChild>
+          </Drawer>}
           <Layout>
             <Routes>
-              <Route path="/" element={<HomePage/>} />
-              <Route path="/about" element={<AboutPage/>} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
             </Routes>
           </Layout>
-        {/* <Footer></Footer> */}
-      </ThemeProvider>
-    </Router>
+          {/* <Footer></Footer> */}
+
+        </ThemeProvider>
+      </Router>
+    </div>
   );
 }
 

@@ -1,11 +1,12 @@
 {
   "name": "react-starter-template",
   "version": "0.0.0",
-  "homepage": "https://{user}.github.io/{repo}/",
+  "homepage": "https://MMBass.github.io/React-starter-template/",
   "scripts": {
     "start": "dev",
     "dev": "vite",
     "build": "tsc && vite build",
+    "deploy": "tsc && vite build && git add dist -f && git commit -m \"deploy to gh-pages\" && git subtree push --prefix dist origin gh-pages",
     "preview": "vite preview"
   },
   "dependencies": {
