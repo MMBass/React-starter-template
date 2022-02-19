@@ -11,6 +11,7 @@ var h=Object.getOwnPropertySymbols;var S=Object.prototype.hasOwnProperty,b=Objec
   }
 `;function V(){const[t,r]=l.exports.useState();return e("div",{className:"wrapper",children:e(O,{children:e("meta",{name:"theme-color",content:t})})})}function X(t){return e("div",{className:"pageLayout",children:t.children})}const Y=d(X)`
   backgroundColor: lightgray;
+  height: 100vh;
 `;function Z(t){const[r,i]=l.exports.useState({permanent:"temporary",open:!0,anchor:"left"});return e(R,{anchor:r.anchor,open:r.open,variant:r.permanent,onClose:()=>{t.toggleDrawer(r.anchor,!1)},children:e(u,{sx:{width:r.anchor==="top"||r.anchor==="bottom"?"auto":250},role:"presentation",onClick:()=>{t.toggleDrawer(r.anchor,!1)},children:t.children})})}const ee=d(Z)`
   *{
     
