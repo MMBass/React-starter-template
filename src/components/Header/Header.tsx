@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 
-import {default as SidePagesList} from '../SidePagesList/StyledSidePagesList';
+import { default as SidePagesList } from '../SidePagesList/StyledSidePagesList';
 import { StyledComponent } from '@emotion/styled';
 
 interface pageItem {
@@ -29,28 +29,16 @@ const pages: pageItem[] = [{ name: 'Home', url: '/' }, { name: 'About', url: '/a
 
 const Header = ({ className, ...props }: HeaderProps) => {
 
-  const handleOpenNavMenu = ():void => {
-    props.toggleDrawer('left',true, SidePagesList);
-  };
-
-  const handleCloseNavMenu = ():void => {
-    props.toggleDrawer('left',false);
+  const handleOpenNavMenu = (): void => {
+    props.toggleDrawer('left', true, SidePagesList);
   };
 
   return (
     <AppBar position="static" className={className}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            BassSites
-          </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -62,20 +50,21 @@ const Header = ({ className, ...props }: HeaderProps) => {
               <MenuIcon />
             </IconButton>
           </Box>
+
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            sx={{ mr: 2, display: 'flex' }}
           >
-            BassSites
+            React Starter Template
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <NavLink to={page.url} key={page.name}>
                 <Button
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'black', display: 'block' }}
+                  sx={{ my: 2, color: 'black' }}
                 >
                   {page.name}
                 </Button>

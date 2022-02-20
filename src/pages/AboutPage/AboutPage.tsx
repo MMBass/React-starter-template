@@ -1,7 +1,7 @@
 
 function AboutPage() {
   return (
-    <div id="">
+    <div className="">
       
     </div>
   );

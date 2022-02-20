@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from '@mui/material/styles';
 
 import { theme } from '../theme';
@@ -12,6 +12,7 @@ import { default as Drawer } from '@components/Drawer/StyledDrawer';
 import HomePage from '@pages/HomePage/HomePage';
 import AboutPage from '@pages/AboutPage/AboutPage';
 import { StyledComponent } from '@emotion/styled';
+import NoMatchPage from '@pages/NoMatchPage/NoMatchPage';
 
 type AnchorType = 'top' | 'left' | 'bottom' | 'right';
 type ChildType = JSX.Element | StyledComponent<any>;
@@ -49,8 +50,9 @@ function App({ className }) {
           </Drawer>}
           <Layout>
             <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/about" element={<AboutPage />} />
+              <Route path={"/"} element={<HomePage />} />
+              <Route path={"/about"} element={<AboutPage />} />
+              <Route path="*" element={<NoMatchPage/>} />
             </Routes>
           </Layout>
           {/* <Footer></Footer> */}

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 import SidePagesList from './SidePagesList';
 
 const StyledSidePagesList = styled(SidePagesList)`

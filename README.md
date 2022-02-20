@@ -6,6 +6,7 @@ base interface by custom and mui components
 relative path to src folder
 generate-template-files ready yo use
 react-meta-tags to inject theme-color
+axios common api's folder
 
 setup:
 
@@ -31,3 +32,15 @@ gh-pages config and deploy:
        'npm run deploy'
 
     thats will build the app & create gh-pages branche (if doasn't exist) & add & commit & push the dist to branch gh-pages
+
+   recommended vscode extentions:
+       vscode-styled-components
+       JS JSX Snippets?
+       ES7+ React/Redux/React-Native snippets?
+
+   the syntax for passing using props in styled component:
+
+      const StyledHeader = styled(CompName)`
+         background-color: #fff;
+         color: ${props => props.colorProp || "#000"};
+      `;
