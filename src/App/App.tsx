@@ -52,7 +52,7 @@ function App({ className }) {
             <Routes>
               <Route path={"/"} element={<HomePage />} />
               <Route path={"/about"} element={<AboutPage />} />
-              <Route path="*" element={<NoMatchPage/>} />
+              <Route path="*" element={<NoMatchPage className={'no-match-page'}/>} />
             </Routes>
           </Layout>
           {/* <Footer></Footer> */}

@@ -52,7 +52,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
             React Starter Template
           </Typography>
 
-          <NavBar></NavBar>
+          <NavBar className="nav-bar"></NavBar>
         </Toolbar>
       </Container>
     </AppBar>
