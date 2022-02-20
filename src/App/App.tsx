@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from '@mui/material/styles';
+import { StyledComponent } from '@emotion/styled';
 
 import { theme } from '../theme';
 
@@ -11,8 +12,7 @@ import { default as Drawer } from '@components/Drawer/StyledDrawer';
 
 import HomePage from '@pages/HomePage/HomePage';
 import AboutPage from '@pages/AboutPage/AboutPage';
-import { StyledComponent } from '@emotion/styled';
-import NoMatchPage from '@pages/NoMatchPage/NoMatchPage';
+import { default as NoMatchPage }  from '@pages/NoMatchPage/StyledNoMatchPage';
 
 type AnchorType = 'top' | 'left' | 'bottom' | 'right';
 type ChildType = JSX.Element | StyledComponent<any>;
