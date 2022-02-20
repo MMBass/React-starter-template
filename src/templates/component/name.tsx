@@ -1,7 +1,7 @@
 
-function Name() {
+function Name({className}) {
   return (
-    <div id="">
+    <div id="" className={className}>
       
     </div>
   );

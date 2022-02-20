@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -7,15 +6,10 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 
 import { default as SidePagesList } from '../SidePagesList/StyledSidePagesList';
+import { default as NavBar } from '@components/NavBar/StyledNavBar';
 import { StyledComponent } from '@emotion/styled';
-
-interface pageItem {
-  name: string,
-  url: string,
-}
 
 type AnchorType = 'top' | 'left' | 'bottom' | 'right';
 type ChildType = JSX.Element | StyledComponent<any>;
@@ -24,8 +18,6 @@ interface HeaderProps {
   className: string,
   toggleDrawer: (anchor: AnchorType, open: boolean, child?: ChildType) => void,
 }
-
-const pages: pageItem[] = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }];
 
 const Header = ({ className, ...props }: HeaderProps) => {
 
@@ -60,17 +52,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
             React Starter Template
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <NavLink to={page.url} key={page.name}>
-                <Button
-                  sx={{ my: 2, color: 'black' }}
-                >
-                  {page.name}
-                </Button>
-              </NavLink>
-            ))}
-          </Box>
+          <NavBar></NavBar>
         </Toolbar>
       </Container>
     </AppBar>
