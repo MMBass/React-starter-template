@@ -10,8 +10,8 @@ import { default as Header } from '@components/Header/StyledHeader';
 import { default as Layout } from '@components/Layout/StyledLayout';
 import { default as Drawer } from '@components/Drawer/StyledDrawer';
 
-import HomePage from '@pages/HomePage/HomePage';
-import AboutPage from '@pages/AboutPage/AboutPage';
+import { default as HomePage }  from '@pages/HomePage/StyledHomePage';
+import { default as AboutPage }  from '@pages/AboutPage/StyledAboutPage';
 import { default as NoMatchPage }  from '@pages/NoMatchPage/StyledNoMatchPage';
 
 type AnchorType = 'top' | 'left' | 'bottom' | 'right';
@@ -19,7 +19,7 @@ type ChildType = JSX.Element | StyledComponent<any>;
 
 function App({ className }) {
 
-  // TODO move to sideBar/drawer context:
+  // TODO move to drawer context:
   const [sideBar, setSideBar] = useState<boolean>(false);
   const [sideBarAnchor, setSideBarAnchor] = useState<AnchorType>('left');
   const [SideBarChild, setSideBarChild] = useState<any>(null);
@@ -56,7 +56,6 @@ function App({ className }) {
             </Routes>
           </Layout>
           {/* <Footer></Footer> */}
-
         </ThemeProvider>
       </Router>
     </div>
