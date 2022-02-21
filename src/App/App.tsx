@@ -50,9 +50,9 @@ function App({ className }) {
           </Drawer>}
           <Layout>
             <Routes>
-              <Route path={"/"} element={<HomePage />} />
-              <Route path={"/about"} element={<AboutPage />} />
-              <Route path="*" element={<NoMatchPage className={'no-match-page'}/>} />
+              <Route path={"/"} element={<HomePage className={'page'}/>} />
+              <Route path={"/about"} element={<AboutPage className={'page'} />} />
+              <Route path="*" element={<NoMatchPage className={'page'}/>} />
             </Routes>
           </Layout>
           {/* <Footer></Footer> */}
