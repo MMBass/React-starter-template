@@ -2,28 +2,9 @@ import { useState } from 'react';
 
 import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
-import { StyledComponent } from '@emotion/styled';
 import Layout from '@components/Layout/Layout';
 
-type PermanentType = "temporary" | "permanent" | "persistent";
-type AnchorType = 'top' | 'left' | 'bottom' | 'right';
-type ChildType = JSX.Element | StyledComponent<any>;
-
-interface DrawerProps {
-  permanent?: PermanentType,
-  anchor: AnchorType,
-  children: ChildType | null,
-  toggleDrawer: (anchor: AnchorType, open: boolean, child?: ChildType) => void,
-  className: string,
-} // todo must come from context
-
-interface drawerState {
-  permanent: PermanentType,
-  open: boolean,
-  anchor: AnchorType,
-} // todo must also come from same context
-
-function SideBar({ className, ...props }: DrawerProps) {
+function SideBar({ className, ...props }) {
 
   const [drawerState, setDrawerState] = useState<drawerState>({
     permanent: "temporary",

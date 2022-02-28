@@ -1,35 +1,28 @@
 {
   "name": "react-starter-template",
+  "private": true,
   "version": "0.0.0",
-  "homepage": "https://MMBass.github.io/React-starter-template/",
   "scripts": {
-    "start": "npm run dev",
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "tsc && vite build && git add dist -f && git commit -m \"deploy to gh-pages\" && git subtree push --prefix dist origin gh-pages"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.4.1",
     "@mui/material": "^5.4.0",
-    "axios": "^0.25.0",
-    "generate-template-files": "^3.2.0",
-    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-meta-tags": "^1.0.1",
     "react-router-dom": "^6.2.1",
-    "vite-tsconfig-paths": "^3.3.17"
+    "axios": "^0.25.0",
+    "generate-template-files": "^3.2.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "@types/node": "^17.0.10",
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
     "@vitejs/plugin-react": "^1.0.7",
-    "gh-pages": "^3.2.3",
-    "typescript": "^4.4.4",
-    "vite": "^2.7.2"
+    "vite": "^2.8.0",
+    "gh-pages": "^3.2.3"
   }
 }

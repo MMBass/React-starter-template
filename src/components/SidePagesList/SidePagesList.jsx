@@ -6,12 +6,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { ArrowForward } from '@mui/icons-material';
 
-interface pageItem {
-  name: string,
-  url: string,
-}
-
-const pages: pageItem[] = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }];
+const pages = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }];
 
 function SidePagesList() {
   return (

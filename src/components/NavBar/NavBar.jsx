@@ -3,14 +3,9 @@ import { NavLink } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
-interface pageItem {
-  name: string,
-  url: string,
-}
-
 function NavBar({className}) {
   
-  const pages: pageItem[] = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }];
+  const pages = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }];
 
   return (
     <Box className={className} sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

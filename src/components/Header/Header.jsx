@@ -1,4 +1,3 @@
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,19 +8,10 @@ import Container from '@mui/material/Container';
 
 import { default as SidePagesList } from '../SidePagesList/StyledSidePagesList';
 import { default as NavBar } from '@components/NavBar/StyledNavBar';
-import { StyledComponent } from '@emotion/styled';
 
-type AnchorType = 'top' | 'left' | 'bottom' | 'right';
-type ChildType = JSX.Element | StyledComponent<any>;
+const Header = ({ className, ...props }) => {
 
-interface HeaderProps {
-  className: string,
-  toggleDrawer: (anchor: AnchorType, open: boolean, child?: ChildType) => void,
-}
-
-const Header = ({ className, ...props }: HeaderProps) => {
-
-  const handleOpenNavMenu = (): void => {
+  const handleOpenNavMenu = () => {
     props.toggleDrawer('left', true, SidePagesList);
   };
 
