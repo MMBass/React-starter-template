@@ -14,7 +14,7 @@ const StyledApp = styled(App)`
   }
 
   .page-h3{
-    margin: 10px 0px 0px 35px;
+    margin: 15px 0px 0px 35px;
     font-size: 35px;
     font-weight: 300;
   }

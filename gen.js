@@ -26,7 +26,17 @@ generateTemplateFiles([
       path: './src/pages/Name',
       pathAndFileNameDefaultCase: '(pascalCase)',
     },
+  },
+  {
+    option: 'ctx',
+    defaultCase: '(pascalCase)',
+    entry: {
+      folderPath: './src/templates/nameContext.ts' ,  // todo change to file, not folder
+    },
+    stringReplacers: ['Name'],
+    output: {
+      path: './src/context/NameContext.ts',
+      pathAndFileNameDefaultCase: '(pascalCase)',
+    },
   }
 ]);
-
-// todo add context creation instead of reducers
