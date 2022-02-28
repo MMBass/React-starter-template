@@ -7,7 +7,7 @@ generateTemplateFiles([
     option: 'c',
     defaultCase: '(pascalCase)',
     entry: {
-      folderPath: './src/templates/component' ,
+      folderPath: './templates/component' ,
     },
     stringReplacers: ['Name'],
     output: {
@@ -19,7 +19,7 @@ generateTemplateFiles([
     option: 'p',
     defaultCase: '(pascalCase)',
     entry: {
-      folderPath: './src/templates/component' ,
+      folderPath: './templates/component' ,
     },
     stringReplacers: ['Name'],
     output: {
@@ -31,7 +31,7 @@ generateTemplateFiles([
     option: 'ctx',
     defaultCase: '(pascalCase)',
     entry: {
-      folderPath: './src/templates/nameContext.js' ,  // todo change to file, not folder
+      folderPath: './templates/nameContext.js' ,  // todo change to file, not folder
     },
     stringReplacers: ['Name'],
     output: {

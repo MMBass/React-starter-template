@@ -1,7 +1,5 @@
 import { createContext } from "react";
 
-type StateType = boolean; // change according to context
-
-const state:StateType = false;
+const state = false;
 
 export const NameContext = createContext(state);
