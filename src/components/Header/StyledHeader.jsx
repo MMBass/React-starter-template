@@ -1,4 +1,5 @@
 import { styled } from '@mui/material/styles';
+import { theme } from '@/theme';
 import Header from './Header';
 
 const StyledHeader = styled(Header)`
@@ -11,6 +12,10 @@ const StyledHeader = styled(Header)`
 
   .MuiBox-root{
     justify-content: flex-end;
+  }
+
+  .MuiButtonBase-root{
+    padding-left: 0;
   }
 `;
 

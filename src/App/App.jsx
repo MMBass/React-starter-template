@@ -1,10 +1,9 @@
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 
 import { theme } from '../theme';
-import ContextComposer from '../context/ContextComposer';
-import { SideBarContext } from '../context/SideBarContext';
+import { DrawerContext } from '@context/DrawerContext';
 
 import HeadTags from '@components/HeadTags/HeadTags';
 import { default as Header } from '@components/Header/StyledHeader';
@@ -17,7 +16,7 @@ import { default as NoMatchPage } from '@pages/NoMatchPage/StyledNoMatchPage';
 
 
 function App({ className }) {
-  const sideBarContext = useContext(SideBarContext);
+  const drawerContext = useContext(DrawerContext);
 
   function init() {
 
@@ -27,21 +26,17 @@ function App({ className }) {
     init();
   }, []);
 
-
-  const toggleDrawer = (anchor, open, child) => {
-    sideBarContext.setSideBar()
-  }
-
   return (
     <div className={className}>
-      <ContextComposer>
         <Router>
           <HeadTags></HeadTags>
           <MuiThemeProvider theme={theme}>
-            <Header className="header" toggleDrawer={toggleDrawer}></Header>
-            {(sideBarContext?.display && sideBarContext?.sideBarChildren) && <Drawer className="side-bar" toggleDrawer={toggleDrawer} anchor={sideBarContext?.anchor}>
-              {sideBarContext?.sideBarChildren}
-            </Drawer>}
+            <Header className="header"></Header>
+            {(drawerContext.open && drawerContext.child) && 
+              <Drawer className="drawer">
+                {/* <drawerContext.child></drawerContext.child> */}
+              </Drawer>
+            }
             <Layout>
               <Routes>
                 <Route path={"/"} element={<HomePage className={'page'} />} />
@@ -52,7 +47,6 @@ function App({ className }) {
             {/* <Footer></Footer> */}
           </MuiThemeProvider>
         </Router>
-      </ContextComposer>
     </div>
   );
 }

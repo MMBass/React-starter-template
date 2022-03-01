@@ -1,10 +1,9 @@
 import React from 'react';
 
 import BannerContextProvider from './BannerContext';
-import SideBarContextProvider from './SideBarContext';
+import DrawerContextProvider from './DrawerContext';
 
-
-const components = [BannerContextProvider,SideBarContextProvider];
+const components = [BannerContextProvider,DrawerContextProvider];
 
 export default function ContextComposer(props) {
     return (

@@ -31,7 +31,7 @@ generateTemplateFiles([
     option: 'ctx',
     defaultCase: '(pascalCase)',
     entry: {
-      folderPath: './templates/nameContext.js' ,  // todo change to file, not folder
+      folderPath: './templates/nameContext.js', //todo finish setting
     },
     stringReplacers: ['Name'],
     output: {

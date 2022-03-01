@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,10 +11,13 @@ import Container from '@mui/material/Container';
 import { default as SidePagesList } from '../SidePagesList/StyledSidePagesList';
 import { default as NavBar } from '@components/NavBar/StyledNavBar';
 
+import { DrawerContext } from '@context/DrawerContext';
+
 const Header = ({ className, ...props }) => {
+  const drawerContext = useContext(DrawerContext);
 
   const handleOpenNavMenu = () => {
-    props.toggleDrawer('left', true, SidePagesList);
+    drawerContext.toggleDrawer(true, 'left', 'temporary', SidePagesList);
   };
 
   return (
