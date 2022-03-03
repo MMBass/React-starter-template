@@ -7,7 +7,7 @@ const StyledApp = styled(App)`
   color: ${props => props.theme.palette.secondary.main};
 
   .page-h2{
-    padding: 80px 0px 0px 35px;
+    padding: 30px 0px 0px 35px;
     font-size: 40px;
     font-weight: 300;
     color: ${props => props.theme.palette.secondary.main};

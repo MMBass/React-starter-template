@@ -1,38 +1,96 @@
-contains:
+<!-- markdownlint-disable-next-line -->
 
-features: styled-components base interface by custom and mui components relative path to src folder generate-template-files ready yo use react-meta-tags to inject theme-color axios common api's folder
+<h1 align="center">React Starter Template</h1>
 
-setup:
+<div align="center">
 
-run npm i
+Quickly start beautiful [React](https://reactjs.org/) apps. With basic ready useful [MUI](https://mui.com/) components. And using [Vite](https://vitejs.dev/) build tool.
 
-replace the hompage github pages to your repo name
+</div>
 
-in serverAxios.ts 'baseUrl' put whatever server link you have, for example: https://{project-name}.herokuapp.com/
+<br>
+<br>
 
-start server on localhost run: npm run dev for production run: npm run build
+## Features
+ Base UI built with Mui components, styled, and custom 
 
-gh-pages config and deploy: *make sure you have set the repo, and the gh-pages option in github settings is on.
+ Aliases path to main folders
 
-after creating git repository and adding the project folder to main branche,
-you are ready to deploy your dist to a new branch:
+ Generate-template-files ready to use with ready templates 
 
-in vite.config file change the base to your repository name
+ Using react-meta-tags to inject dynamic theme-color 
+
+ Axios common api's folder
+
+
+<br>
+<br>
+
+## Setup
+
+Install the npm packages.
+
+```sh
+npm i
+```
+In serverAxios.ts 'baseUrl' put whatever server link you have. For example:
+
+```sh
+ https://{project-name}.herokuapp.com/
+```
+Start dev server on localhost  for production run
+```sh
+ npm run dev
+```
+For production version run 
+```sh
+ npm run build
+ npm run preview
+```
+
+<br>
+<br>
+
+## Deploy to github pages
+
+### *Make sure you have set the repo, and the gh-pages option in github settings is on
+
+### 1. Push the project folder (not the build) to the main branche
+
+### 2. Replace the hompage in package.json to your repo name
+```json
+   "homepage": "https://<user-name>.github.io/<repo-name>/",
+```
+
+### 3. In vite.config file change the base to your repository name
+```js
    base: '/<REPO-NAME>/',
+```
+### 4. Then just run 
+```sh
+   npm run deploy
+```
+Thats will build the app & create gh-pages branche (if doasn't exist) & add & commit & push the dist to branch gh-pages.
 
-then just run 
-   'npm run deploy'
+<br>
+<br>
 
-thats will build the app & create gh-pages branche (if doasn't exist) & add & commit & push the dist to branch gh-pages
-recommended vscode extentions: vscode-styled-components JS JSX Snippets? ES7+ React/Redux/React-Native snippets?
+## Recommended vscode extentions 
+### [Vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components)
+### [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 
-the syntax for passing using props in styled component:
+<br>
+<br>
 
-  const StyledHeader = styled(CompName)`
-     background-color: #fff;
-     color: ${props => props.colorProp || "#000"};
-  `;
+## Generate New files
+### Shortcut for components, pags, and context
+to start use run:
+```sh
+npm run gen
+```
 
-easy cmd files genertor, for types: components, pages, contex.
+<br>
+<br>
 
-   run 'npm run gen' to start use
+***
+For integration and more components see the [MUI](https://mui.com/) library
