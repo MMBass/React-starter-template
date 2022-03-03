@@ -1,6 +1,6 @@
 const { generateTemplateFiles } = require('generate-template-files');
 
-// run 'node gen' to start use
+// run 'npm run gen' to start use
 
 generateTemplateFiles([
   {
@@ -10,6 +10,7 @@ generateTemplateFiles([
       folderPath: './templates/component' ,
     },
     stringReplacers: ['Name'],
+    dynamicReplacers: [{slot:'__class__', slotValue: 'className'}],
     output: {
       path: './src/components/Name',
       pathAndFileNameDefaultCase: '(pascalCase)',
@@ -29,14 +30,14 @@ generateTemplateFiles([
   },
   {
     option: 'ctx',
-    defaultCase: '(pascalCase)',
+    defaultCase: '(noCase)',
     entry: {
-      folderPath: './templates/nameContext.js', //todo finish setting
+      folderPath: './templates/nameContext.jsx',
     },
-    stringReplacers: ['Name'],
+    stringReplacers: ['Name', 'name'],
     output: {
-      path: './src/context/NameContext.js',
-      pathAndFileNameDefaultCase: '(pascalCase)',
+      path: './src/context/NameContext.jsx',
+      pathAndFileNameDefaultCase: '(noCase)',
     },
   }
 ]);

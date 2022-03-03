@@ -1,8 +1,8 @@
 
 // shared layout for all pages
-function Layout(props) {
+function Layout({className,...props}) {
   return (
-    <div className="pageLayout">
+    <div className={className}>
       {props.children}
     </div>
   );

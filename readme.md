@@ -32,3 +32,7 @@ the syntax for passing using props in styled component:
      background-color: #fff;
      color: ${props => props.colorProp || "#000"};
   `;
+
+easy cmd files genertor, for types: components, pages, contex.
+
+   run 'npm run gen' to start use

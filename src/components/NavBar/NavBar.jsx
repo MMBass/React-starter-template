@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import {Box, Button} from '@mui/material';
 
 function NavBar({className}) {
   
@@ -12,7 +11,7 @@ function NavBar({className}) {
     {pages.map((page) => (
       <NavLink to={page.url} key={page.name}>
         <Button
-          sx={{ my: 2, color: 'black' }}
+          sx={{ my: 2 }}
         >
           {page.name}
         </Button>

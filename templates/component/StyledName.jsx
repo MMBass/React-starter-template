@@ -1,6 +1,8 @@
 import { styled } from '@mui/material/styles';
 import Name from './Name';
 
-export const StyledName = styled(Name)`
+const StyledName = styled(Name)`
   
 `;
+
+export default StyledName;

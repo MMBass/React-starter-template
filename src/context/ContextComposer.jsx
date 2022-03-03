@@ -1,9 +1,10 @@
 import React from 'react';
 
-import BannerContextProvider from './BannerContext';
 import DrawerContextProvider from './DrawerContext';
+import BannersContextProvider from './BannersContext';
+import LoadersContextProvider from './LoadersContext';
 
-const components = [BannerContextProvider,DrawerContextProvider];
+const components = [DrawerContextProvider, BannersContextProvider, LoadersContextProvider];
 
 export default function ContextComposer(props) {
     return (

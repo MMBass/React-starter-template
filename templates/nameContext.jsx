@@ -1,5 +1,19 @@
-import { createContext } from "react";
+import React, { useState } from 'react';
 
-const state = false;
+export const NameContext = React.createContext(undefined);
 
-export const NameContext = createContext(state);
+export default function NameContextProvider(props) {
+    const [name, setName] = useState({});
+
+    const handleSet = () => {
+        setName();
+    }
+
+    const actions = { handleSet };
+
+    return (
+        <NameContext.Provider value={{ ...name, ...actions }}>
+            {props.children}
+        </NameContext.Provider>
+    );
+}; //todo Important Add the ContextProvider to Composer

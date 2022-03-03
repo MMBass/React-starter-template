@@ -3,11 +3,11 @@ import { theme } from '@/theme';
 import Header from './Header';
 
 const StyledHeader = styled(Header)`
-  background-color: #2D4260;
-  color: #F4F5F7;
+  background-color: ${props => props.theme.palette.primary.dark};
+  color: ${props => props.theme.palette.secondary.main};
 
   button{
-    color: #F4F5F7;
+    color: ${props => props.theme.palette.secondary.main};
   }
 
   .MuiBox-root{

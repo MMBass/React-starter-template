@@ -5,16 +5,16 @@ const StyledDrawer = styled(Drawer)`
   color: #F4F5F7;
   
   .MuiDrawer-paper {
-    background: #0092AB; 
-    color: #F4F5F7;
+    background-color: ${props => props.theme.palette.primary.main};
+    color: ${props => props.theme.palette.secondary.main};
   }
 
   svg{
-    color: #F4F5F7;
+    color: ${props => props.theme.palette.secondary.main};
   }
 
   a{
-    color: #F4F5F7;
+    color: ${props => props.theme.palette.secondary.main};
     text-decoration: none;
   }
 `;

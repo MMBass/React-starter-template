@@ -1,8 +1,7 @@
 import { useContext } from 'react';
 import { DrawerContext } from '@context/DrawerContext';
 
-import {Drawer as MuiDrawer} from '@mui/material';
-import Box from '@mui/material/Box';
+import {Drawer as MuiDrawer, Box} from '@mui/material';
 
 function Drawer({ className, ...props }) {
   const drawerContext = useContext(DrawerContext);
