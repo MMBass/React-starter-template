@@ -23,6 +23,7 @@ generateTemplateFiles([
       folderPath: './templates/component' ,
     },
     stringReplacers: ['Name'],
+    dynamicReplacers: [{slot:'__class__', slotValue: 'className'}],
     output: {
       path: './src/pages/Name',
       pathAndFileNameDefaultCase: '(pascalCase)',
