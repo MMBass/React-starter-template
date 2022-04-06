@@ -16,8 +16,8 @@ export default function LoadersContextProvider(props) {
     }
 
     const toggleLoader = (name) => {
-        if (loaders.name) {
-            setLoaders({ ...loaders, [name]: { ...loaders.name, open: !loaders.name.open } });
+        if (loaders[name]) {
+            setLoaders({ ...loaders, [name]: { ...loaders[name], open: !loaders[name].open } });
         } else {
             console.error("Loader does'nt exist. Name: " + name);
         }

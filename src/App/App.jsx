@@ -76,7 +76,7 @@ function App({ className }) {
         }
         <Dialog></Dialog>
         {/* <Modal> */}
-          {/* Modal must have a children */}
+        {/* Modal must have a children */}
         {/* </Modal> */}
         {/*end dynamic global elements*/}
 
