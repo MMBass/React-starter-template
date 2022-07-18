@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 
 export const NameContext = React.createContext(undefined);
 
+/*
+!!!
+Important Add every ContextProvider to Composer
+!!!
+*/
+
 export default function NameContextProvider(props) {
     const [name, setName] = useState({});
 
@@ -16,4 +22,4 @@ export default function NameContextProvider(props) {
             {props.children}
         </NameContext.Provider>
     );
-}; //todo Important Add the ContextProvider to Composer
+};
