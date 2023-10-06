@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 
 export const NameContext = React.createContext(undefined);
 
-/*
-!!!
-Important Add every ContextProvider to Composer
-!!!
-*/
+/* !!! Important: Add every ContextProvider to Composer */
 
 export default function NameContextProvider(props) {
     const [name, setName] = useState({});

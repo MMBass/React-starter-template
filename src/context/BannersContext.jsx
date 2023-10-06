@@ -1,3 +1,15 @@
+/* !!! Important: When listening to updates from this context,
+you may have to put useEffect in the target component
+(and depends on [nameContext]) to force rerender before updating other states */
+
+/* In order to createBanner you should create a container for it
+in the componenet you want to display.
+example:
+{(bannersContext.{{YOUR BANNER FUTURE NAME}}?.open) &&
+    {{HERE PUT THE CHILDS, E.T.C: <Alert> OR <Snackbar> OR IT CAN BE ANY html,
+    AND USE THE severity/title/message IF NEEDED}}
+} */
+
 import React, { useState } from 'react';
 
 export const BannersContext = React.createContext(undefined);
@@ -15,15 +27,23 @@ export default function BannersContextProvider(props) {
         setBanners({ ...banners, [name]: { open: false, severity: severity || "success", title: title || "", mesaage: mesaage || "" } });
     }
 
-    const toggleBanner = (name) => {
+    const openBanner = (name) => {
         if (banners[name]) {
-            setBanners({ ...banners, [name]: { ...banners[name], open: !banners[name].open } });
+            setBanners({ ...banners, [name]: { ...banners[name], open: true } });
         } else {
-            console.error("Banner does'nt exist. Name: " + name);
+            console.error("Banner" + name + "does'nt exist");
         }
     }
 
-    const actions = { createBanner, toggleBanner };
+    const closeBanner = (name) => {
+        if (banners[name]) {
+            setBanners({ ...banners, [name]: { ...banners[name], open: false } });
+        } else {
+            console.error("Banner" + name + "does'nt exist");
+        }
+    }
+
+    const actions = { createBanner, openBanner, closeBanner };
 
     return (
         <BannersContext.Provider value={{ ...banners, ...actions }}>
