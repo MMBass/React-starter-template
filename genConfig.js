@@ -25,7 +25,7 @@ generateTemplateFiles([
     stringReplacers: ['Name'],
     dynamicReplacers: [{slot:'__class__', slotValue: 'className'}],
     output: {
-      path: './src/pages/Name',
+      path: './src/pages/NamePage',
       pathAndFileNameDefaultCase: '(pascalCase)',
     },
   },
