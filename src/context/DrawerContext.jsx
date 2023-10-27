@@ -5,11 +5,15 @@ export const DrawerContext = React.createContext(undefined);
 export default function DrawerContextProvider(props) {
     const [drawer, setDrawer] = useState({});
 
-    const toggleDrawer = (open, anchor, permanent = "temporary", child) => {
+    const openDrawer = (open, anchor, permanent = "temporary", child) => {
         setDrawer({ open, anchor, permanent, child });
     }
 
-    const actions = { toggleDrawer };
+    const closeDrawer = () => {
+        setDrawer({});
+    }
+
+    const actions = { openDrawer, closeDrawer };
 
     return (
         <DrawerContext.Provider value={{ ...drawer, ...actions }}>

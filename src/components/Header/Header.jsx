@@ -19,7 +19,12 @@ const Header = ({ className, ...props }) => {
   const drawerContext = useContext(DrawerContext);
 
   const handleOpenNavMenu = () => {
-    drawerContext.toggleDrawer(true, 'left', 'temporary', SidePagesList);
+    if(!drawerContext.open){
+      drawerContext.openDrawer(true, 'left', 'temporary', SidePagesList);
+    }else{
+      drawerContext.closeDrawer();
+    }
+   
   };
 
   return (
