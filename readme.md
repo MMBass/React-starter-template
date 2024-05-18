@@ -75,9 +75,9 @@ That will build the app & create gh-pages branche (if doasn't exist) & add & com
 <br>
 
 ## Our Recommended vscode extentions:
-## [Vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components)
-## [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
-## [Cody Free AI Assistant](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai)
+#### [Vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components)
+#### [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+#### [Cody Free AI Assistant](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai)
 
 <br>
 <br>
