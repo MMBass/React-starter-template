@@ -16,19 +16,18 @@ Quickly start beautiful [React](https://reactjs.org/) apps. With basic ready use
 
  Aliases path to main folders
 
- Generate-template-files ready to use with ready templates 
+ Generate-template-files ready to use with templates 
 
  Using react-meta-tags to inject dynamic theme-color 
 
  Axios common api's folder
-
 
 <br>
 <br>
 
 ## Setup
 
-Install the npm packages.
+Install the npm packages
 
 ```sh
 npm i
@@ -38,7 +37,7 @@ In serverAxios.ts 'baseUrl' put whatever server link you have. For example:
 ```sh
  https://{project-name}.herokuapp.com/
 ```
-Start dev server on localhost  for production run
+Start dev server on localhost for development
 ```sh
  npm run dev
 ```
@@ -70,21 +69,22 @@ For production version run
 ```sh
    npm run deploy
 ```
-Thats will build the app & create gh-pages branche (if doasn't exist) & add & commit & push the dist to branch gh-pages.
+That will build the app & create gh-pages branche (if doasn't exist) & add & commit & push the dist into gh-pages branch.
 
 <br>
 <br>
 
-## Recommended vscode extentions 
-### [Vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components)
-### [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+## Our Recommended vscode extentions:
+## [Vscode-styled-components](https://marketplace.visualstudio.com/items?itemName=styled-components.vscode-styled-components)
+## [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
+## [Cody Free AI Assistant](https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai)
 
 <br>
 <br>
 
 ## Generate New files
 ### Shortcut for components, pags, and context
-to start use run:
+to start use, just run:
 ```sh
 npm run gen
 ```
